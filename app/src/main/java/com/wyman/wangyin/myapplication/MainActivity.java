@@ -3,6 +3,9 @@ package com.wyman.wangyin.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * wangyin
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
