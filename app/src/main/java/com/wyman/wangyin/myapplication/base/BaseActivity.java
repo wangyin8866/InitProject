@@ -109,7 +109,7 @@ public abstract class BaseActivity<T extends BasePresenter<V>, V> extends AppCom
         mPresenter.detach();
         super.onDestroy();
         if (this.mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions()) {
-            this.mCompositeSubscription.unsubscribe();
+            this.mCompositeSubscription.clear();
         }
     }
 

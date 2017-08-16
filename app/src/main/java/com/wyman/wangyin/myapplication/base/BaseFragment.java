@@ -38,7 +38,7 @@ public abstract class BaseFragment<T extends BasePresenter<V>, V> extends Fragme
         super.onDestroy();
         mPresenter.detach();
         if (this.mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions()) {
-            this.mCompositeSubscription.unsubscribe();
+            this.mCompositeSubscription.clear();
         }
     }
 
