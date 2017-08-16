@@ -4,9 +4,9 @@ package com.wyman.wangyin.myapplication.model;
 import com.wyman.wangyin.myapplication.base.BaseApplication;
 import com.wyman.wangyin.myapplication.base.LifeSubscription;
 import com.wyman.wangyin.myapplication.config.NetConstantValues;
-import com.wyman.wangyin.myapplication.utils.LogInterceptor;
 import com.wyman.wangyin.myapplication.utils.LogUtils;
 import com.wyman.wangyin.myapplication.utils.WYUtils;
+import com.wyman.wangyin.mylibrary.LogInterceptor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ import rx.schedulers.Schedulers;
 
 /**
  * 网络请求基类2.0版本
- * Created by NIUDEYANG on 2016/11/17.
+ * Created by wy on 2016/11/17.
  */
 
 public class BaseModel {
@@ -38,7 +38,7 @@ public class BaseModel {
         //手动创建一个OkHttpClient并设置超时时间
         httpClientBuilder = new OkHttpClient.Builder();
         if (WYUtils.isApkInDebug(BaseApplication.getContext())) {
-            httpClientBuilder.retryOnConnectionFailure(true).addInterceptor(new LogInterceptor()).connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+            httpClientBuilder.retryOnConnectionFailure(true).addInterceptor(new LogInterceptor()).connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         }else {
             httpClientBuilder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         }
@@ -54,10 +54,11 @@ public class BaseModel {
 
     //添加线程订阅
     public static <T> void invoke(LifeSubscription lifeSubscription, Observable<T> observable, Subscriber<T> subscriber) {
-        LogUtils.e("ndy_params", map.toString());
+        LogUtils.e("wyman", map.toString());
         Subscription subscription = observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
         lifeSubscription.bindSubscription(subscription);
     }
+
 }
