@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="cn.wyman.wangyin:retrofitlibrary-2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/retrofitlibrary-2.0.aar/58aca761c197c9e784c2911d053e5054/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/retrofitlibrary-2.0.aar/58aca761c197c9e784c2911d053e5054/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.wyman.wangyin/retrofitlibrary/2.0/115bd792a2d12708ad69c610eeaf355bffb8c3e0/retrofitlibrary-2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
