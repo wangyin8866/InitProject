@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.wyman.wangyin.myapplication.com.haolyy.wangyin.myapplication.MainActivity">
-<com.haolyy.haolyy.custom.NoScrollViewPager
+<com.haolyy.wangyin.custom.NoScrollViewPager
     android:id="@+id/id_main_viewPager"
     android:layout_width="match_parent"
     android:layout_height="0dp"
